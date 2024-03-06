@@ -49,7 +49,7 @@ function ChangeDot(j) {
 
 // Event listener sur la fleche droite
 dte.addEventListener("click", () => {
-  console.log("clicks sur la flèche droite");
+  console.log("click sur la flèche droite");
   if (i >= 0 && i < slides.length - 1) {
     ChangeSlide(i + 1);
     ChangeDot(j + 1);
@@ -67,7 +67,7 @@ dte.addEventListener("click", () => {
 
 // Event listener sur la fleche gauche
 gch.addEventListener("click", () => {
-  console.log("clicks sur la flèche gauche");
+  console.log("click sur la flèche gauche");
   if (i > 0 && i <= slides.length) {
     ChangeSlide(i - 1);
     ChangeDot(j - 1);
