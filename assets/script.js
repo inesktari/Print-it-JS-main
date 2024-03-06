@@ -19,14 +19,12 @@ const slides = [
 ];
 
 //Déclaration des variables
-let i = 0;
-let j = 0;
+let i = (j = 0);
 let gch = document.querySelector(".arrow_left");
 let dte = document.querySelector(".arrow_right");
 let photo = document.querySelector(".banner-img");
 let tag = document.querySelector(".texte");
 let points = document.querySelectorAll(".dot");
-let dots = document.querySelectorAll(".dot");
 
 console.log("image et tag N°", i + 1, ", point N°", j + 1);
 
