@@ -18,54 +18,67 @@ const slides = [
   },
 ];
 
+//Déclaration des variables
 let i = 0;
 let j = 0;
-
-console.log("i=", i, " et j=", j);
-
-function ChangeSlide(i) {
-  document.querySelector(
-    ".banner-img"
-  ).src = `assets/images/slideshow/${slides[i].image}`;
-  document.querySelector(".texte").innerHTML = `${slides[i].tagLine}`;
-}
-
-// function ChangeDot(j) {
-//   let dot = document.querySelectorAll(".dot");
-
-//   dot.classList.add(".dot_selected");
-// }
-
-// Event listeners sur les fleches
 let gch = document.querySelector(".arrow_left");
 let dte = document.querySelector(".arrow_right");
+let photo = document.querySelector(".banner-img");
+let tag = document.querySelector(".texte");
+let points = document.querySelectorAll(".dot");
+let dots = document.querySelectorAll(".dot");
 
+console.log("image N°", i + 1, ", et point N°", j + 1);
+
+// Fonction pour changer les images du slider
+function ChangeSlide(i) {
+  photo.src = `assets/images/slideshow/${slides[i].image}`;
+  tag.innerHTML = `${slides[i].tagLine}`;
+}
+
+// Fonction pour faire correspondre les bullet points aux images du slider
+function ChangeDot(j) {
+  points.forEach((dot, i) => {
+    if (j === i) {
+      dot.classList.add("dot_selected");
+    } else {
+      dot.classList.remove("dot_selected");
+    }
+  });
+}
+
+// Event listener sur la fleche droite
 dte.addEventListener("click", () => {
   console.log("clicks sur la flèche droite");
   if (i >= 0 && i < slides.length - 1) {
     ChangeSlide(i + 1);
-    // ChangeDot(i + 1);
+    ChangeDot(j + 1);
     i++;
-    console.log("i=", i, " et j=", j);
+    j++;
+    console.log("image N°", i + 1, ", et point N°", j + 1);
   } else {
     i = 0;
+    j = 0;
     ChangeSlide(i);
-    // ChangeDot(i);
-    console.log("i=", i, " et j=", j);
+    ChangeDot(j);
+    console.log("image N°", i + 1, ", et point N°", j + 1);
   }
 });
 
+// Event listener sur la fleche gauche
 gch.addEventListener("click", () => {
   console.log("clicks sur la flèche gauche");
   if (i > 0 && i <= slides.length) {
     ChangeSlide(i - 1);
-    // ChangeDot(i - 1);
+    ChangeDot(j - 1);
     i--;
-    console.log("i=", i, " et j=", j);
+    j--;
+    console.log("image N°", i + 1, ", et point N°", j + 1);
   } else {
     i = slides.length - 1;
+    j = slides.length - 1;
     ChangeSlide(i);
-    // ChangeDot(i);
-    console.log("i=", i, " et j=", j);
+    ChangeDot(j);
+    console.log("image N°", i + 1, ", et point N°", j + 1);
   }
 });
