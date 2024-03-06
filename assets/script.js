@@ -30,7 +30,7 @@ let dots = document.querySelectorAll(".dot");
 
 console.log("image N°", i + 1, ", et point N°", j + 1);
 
-// Fonction pour changer les images du slider
+// Fonction pour changer l'image et le texte du slider
 function ChangeSlide(i) {
   photo.src = `assets/images/slideshow/${slides[i].image}`;
   tag.innerHTML = `${slides[i].tagLine}`;
