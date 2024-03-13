@@ -26,7 +26,7 @@ let photo = document.querySelector(".banner-img");
 let tag = document.querySelector(".texte");
 let points = document.querySelectorAll(".dot");
 
-console.log("image et tag N°", i + 1, ", point N°", j + 1);
+console.log("Slide N°", i + 1, ", point N°", j + 1);
 
 // Fonction pour changer l'image et le texte du slider
 function ChangeSlide(i) {
@@ -53,13 +53,13 @@ dte.addEventListener("click", () => {
     ChangeDot(j + 1);
     i++;
     j++;
-    console.log("image et tag N°", i + 1, ", point N°", j + 1);
+    console.log("Slide N°", i + 1, ", point N°", j + 1);
   } else {
     i = 0;
     j = 0;
     ChangeSlide(i);
     ChangeDot(j);
-    console.log("image et tag N°", i + 1, ", point N°", j + 1);
+    console.log("Slide N°", i + 1, ", point N°", j + 1);
   }
 });
 
@@ -71,12 +71,12 @@ gch.addEventListener("click", () => {
     ChangeDot(j - 1);
     i--;
     j--;
-    console.log("image et tag N°", i + 1, ", point N°", j + 1);
+    console.log("Slide N°", i + 1, ", point N°", j + 1);
   } else {
     i = slides.length - 1;
     j = slides.length - 1;
     ChangeSlide(i);
     ChangeDot(j);
-    console.log("image et tag N°", i + 1, ", point N°", j + 1);
+    console.log("Slide N°", i + 1, ", point N°", j + 1);
   }
 });
